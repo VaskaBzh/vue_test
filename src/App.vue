@@ -1,5 +1,5 @@
 <template>
-  <main-header :viewpostWidth="this.viewportWidth" />
+  <header-component :viewpostWidth="this.viewportWidth" />
   <div class="page">
     <router-view :viewpostWidth="this.viewportWidth" />
   </div>
@@ -8,12 +8,12 @@
 
 <script>
 import FooterComponent from "@/components/FooterComponent.vue";
-import MainHeader from "@/components/HeaderComponent.vue";
+import HeaderComponent from "@/components/HeaderComponent.vue";
 
 export default {
   components: {
     FooterComponent,
-    MainHeader,
+    HeaderComponent,
   },
   data() {
     return {
@@ -24,6 +24,9 @@ export default {
     handleResize() {
       this.viewportWidth = window.innerWidth;
     },
+  },
+  mounted() {
+    this.handleResize();
   },
 };
 </script>
@@ -44,5 +47,8 @@ export default {
     #e8ecf2 19.07%
   );
   width: 100vw;
+}
+.page {
+  flex: 1 1 auto;
 }
 </style>

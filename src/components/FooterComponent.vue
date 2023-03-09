@@ -3,6 +3,7 @@
 </template>
 <script>
 export default {
+  name: "footer-component",
   props: {
     viewportWidth: Number,
   },
