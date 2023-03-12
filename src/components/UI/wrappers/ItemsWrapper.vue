@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper">
     <main-item
-      @getItem="this.getter"
       v-for="item in this.items"
       :key="item.key"
       :item="item"
+      @click="this.getter(item)"
       >item.name</main-item
     >
   </div>

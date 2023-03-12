@@ -1,5 +1,5 @@
 <template>
-  <div class="item" @click="this.$emit('getItem', this.item)">
+  <div class="item">
     <slot />
     <span v-if="!this.item.img">{{ this.item.name }}</span>
     <img

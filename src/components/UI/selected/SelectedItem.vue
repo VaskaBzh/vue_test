@@ -1,12 +1,12 @@
 <template>
-  <div class="selected" v-if="this.item.id">
-    <div class="selected_button" @click="this.$emit('resetItem')">
+  <div class="selected" v-if="this.renderedItem.id">
+    <div class="selected_button" @click="this.reset">
       <span class="selected_button-remove"></span>
     </div>
-    <span v-if="!this.item.img">{{ this.item.name }}</span>
+    <span v-if="!this.renderedItem.img">{{ this.renderedItem.name }}</span>
     <img
-      v-if="this.item.img"
-      :src="require(`@/assets/img/${this.item.img}`)"
+      v-if="this.renderedItem.img"
+      :src="require(`@/assets/img/${this.renderedItem.img}`)"
       alt="selected_img"
     />
   </div>
@@ -16,11 +16,20 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
   props: {
     item: Object,
   },
   name: "selected-item",
+  computed: mapGetters(["renderedItem"]),
+  methods: {
+    ...mapMutations(["removeItemRight"]),
+    reset() {
+      this.removeItemRight();
+    },
+  },
 };
 </script>
 

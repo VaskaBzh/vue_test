@@ -2,12 +2,12 @@
   <div class="selected">
     <div class="selected__wrapper">
       <main-item
-        v-for="item in this.items"
+        v-for="item in this.renderedItems"
         :key="item.key"
         :item="item"
         class="no-hover"
       >
-        <div class="selected_button" @click="this.$emit('filterItems', item)">
+        <div class="selected_button" @click="this.removeItem(item)">
           <span class="selected_button-remove"></span></div
       ></main-item>
     </div>
@@ -16,11 +16,17 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
-  props: {
-    items: Array,
-  },
   name: "all-selected",
+  computed: mapGetters(["renderedItems"]),
+  methods: {
+    ...mapMutations(["removeItemLeft"]),
+    removeItem(item) {
+      this.removeItemLeft(item);
+    },
+  },
 };
 </script>
 
