@@ -35,50 +35,8 @@ export default {
     align-items: center;
   }
 
-  .target {
-    position: relative;
-    @media (min-width: 1280.98px) {
-      &:before {
-        content: "";
-        border-radius: 50%;
-        background: linear-gradient(
-          179.87deg,
-          #e6eaf0 1.02%,
-          #e6eaf1 4.79%,
-          #e7ebf1 8.76%,
-          #eaeef4 14.75%,
-          #e8ecf2 19.07%
-        );
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        left: 25%;
-        bottom: -580%;
-      }
-    }
-  }
-
   .logo {
     position: relative;
-    @media (min-width: 1280.98px) {
-      &:before {
-        content: "";
-        border-radius: 50%;
-        background: linear-gradient(
-          179.87deg,
-          #e6eaf0 1.02%,
-          #e6eaf1 4.79%,
-          #e7ebf1 8.76%,
-          #eaeef4 14.75%,
-          #e8ecf2 19.07%
-        );
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        left: 10%;
-        bottom: -295%;
-      }
-    }
   }
 }
 </style>

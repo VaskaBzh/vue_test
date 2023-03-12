@@ -1,5 +1,9 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <div class="home__container">
+      <main-title>Добро пожаловать!</main-title>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -12,4 +16,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home {
+  padding: 120px 0;
+  .title {
+    text-align: center;
+  }
+}
+</style>
